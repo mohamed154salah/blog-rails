@@ -12,4 +12,81 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+html  {
+  background: #439D9D;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+.article{
+border: 2px solid #A1CCF1;
+border-radius:  15px ;
+background-color: #214d4d;
+margin: 10px;
+padding: 10px;
+}
+.title{
+text-align: center;
+font-size: 50px;
+font-family: "Times New Roman", Times, serif;
+font-weight: bold;
+color: #F6F1F6
+}
+.head{
+text-align: left;
+font-size: 30px;
+font-family: "Times New Roman", Times, serif;
+font-weight: bold;
+color: #F6F1F6
+}
+
+.content{
+margin: 5px;
+padding: 5px;
+text-align: center;
+font-size: 20px;
+font-weight:normal;
+color: #F6F1F6
+
+}
+.lefter {
+  text-align: left;
+  padding: 10px;
+}
+/* style for user link  */
+
+.userLink {
+  text-align: left;
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+.userLink:link {
+  color: #C08CA1;
+}
+
+.userLink:visited {
+  color: #C08CA1;
+}
+
+.userLink:focus {
+  border-bottom: 1px solid;
+  background: #8b657565;
+}
+
+.userLink:hover {
+  border-bottom: 1px solid;
+  background: #8b657565;
+}
+
+.userLink:active {
+  background: #C08CA1;
+  color: #8b657565;
+}

@@ -1,17 +1,23 @@
-<div id="<%= dom_id article %>">
-  <p>
-    <strong>Title:</strong>
+<div class="article" id="<%= dom_id article %>">
+  <p class="head">
     <%= article.title %>
   </p>
-
+  
   <p>
-    <strong>Content:</strong>
-    <%= article.content %>
+    <%= article.content  %>
   </p>
 
-  <p>
-    <strong>User:</strong>
-    <%= article.user_id %>
+  
+  <p >
+<i class="fa-solid fa-user"></i>
+<%= link_to article.user.name, user_path(article.user),
+   :class => "userLink lefter"%>
   </p>
-
+  
+  <p class="lefter">
+    <strong>Posted:</strong>
+    <%=((Time.current - article.created_at)/1.minute).round%>
+    <span>minutes ago</span>
+  </p>
+ 
 </div>
