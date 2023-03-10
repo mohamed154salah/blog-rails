@@ -1,4 +1,6 @@
-<%= form_with(model: comment) do |form| %>
+<%= form_with model: [@article,Comment.new] do |form| %>
+ <%
+=begin%>
   <% if comment.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -9,24 +11,37 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> 
+<%
+=end%>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+
+
+
+ <%
+=begin%>
+  <div class="mb-3">
+    <%= form.label :user_id ,:class=>"form-label" %>
+    <span> : </span>
+    <%=Current.user.userName %>
+  </div>  
+<%
+=end%>
+  <div class="mb-3">
+    <%= form.label :content, style: "display: block" ,:class=>"form-label" %>
+    <%= form.text_area  :content ,:class=>"form-control",:placeholder=>"Any Coment"%>
   </div>
 
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content %>
-  </div>
-
-  <div>
+<%
+=begin%>
+   <div>
     <%= form.label :article_id, style: "display: block" %>
-    <%= form.text_field :article_id %>
-  </div>
+    <%= form.collection_select :article_id, Article.all,:id ,:title %>
+  </div> 
+<%
+=end%>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Create" ,  :class=>"btn btn-info" %>
   </div>
 <% end %>

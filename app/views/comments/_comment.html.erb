@@ -1,17 +1,14 @@
-<div id="<%= dom_id comment %>">
-  <p>
+<div id="<%= dom_id comment %>" class="comment">
+  <p  class="head">
     <strong>User:</strong>
-    <%= comment.user_id %>
+    <%= comment.user.userName %>
   </p>
 
-  <p>
-    <strong>Content:</strong>
+  <p class="content">
+    <strong>comment:</strong>
     <%= comment.content %>
   </p>
 
-  <p>
-    <strong>Article:</strong>
-    <%= comment.article_id %>
-  </p>
+
 
 </div>

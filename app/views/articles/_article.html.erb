@@ -3,21 +3,21 @@
     <%= article.title %>
   </p>
   
-  <p>
+  <div class="content">
     <%= article.content  %>
-  </p>
+  </div>
 
   
-  <p >
-<i class="fa-solid fa-user"></i>
-<%= link_to article.user.name, user_path(article.user),
-   :class => "userLink lefter"%>
-  </p>
+  <div  class="content">
+    <i class="fa-solid fa-user"></i>
+    <%=link_to article.user.name, user_path(article.user),
+       :class => "userLink lefter"%>
+  </div>
   
-  <p class="lefter">
+  <div  class="content">
     <strong>Posted:</strong>
-    <%=((Time.current - article.created_at)/1.minute).round%>
+      <%=((Time.current - article.created_at)/1.minute).round %>
     <span>minutes ago</span>
-  </p>
+  </div>
  
 </div>

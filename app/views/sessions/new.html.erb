@@ -1,0 +1,22 @@
+<h1>Sign in</h1>
+<%=form_with data: { turbo: false }, url:sign_in_path do|form| %>
+
+  <% if flash[:alert] %>
+  <div class="alert alert-info"><%= flash[:alert] %></div>
+  <% end %>
+
+  <div class="mb-3">
+  <%= form.label :userName , :class=>"form-label"%>
+  <%= form.text_field :userName ,:class=>"form-control", :placeholder=>"userName"%>
+  </div>
+  
+  <div class="mb-3">
+  <%= form.label :password , :class=>"form-label"%>
+  <%= form.password_field :password ,:class=>"form-control", :placeholder=>"password"%>
+  </div>
+  
+   <div class="mb-3">
+      <%= form.submit "Sign In" ,  :class=>"btn btn-primary"%>
+  </div>
+
+<%end%>
