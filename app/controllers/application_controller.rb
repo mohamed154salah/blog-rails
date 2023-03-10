@@ -7,5 +7,11 @@ class ApplicationController < ActionController::Base
       Current.user=User.find_by(id:session[:user_id])
     end
   end
+  
+  def require_login!
+    unless Current.user
+      redirect_to sign_in_path, alert: "You must be signed in"
+    end
+  end
    
 end

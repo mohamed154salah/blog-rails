@@ -20,7 +20,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
         <% if Current.user%>
           <li class="nav-item navbar-brand"> 
-            <%=Current.user.userName%>
+            <%=link_to Current.user.userName,edit_password_path ,:class=>"nav-link"%>
           </li>
           <li class="nav-item">  
             <%=button_to "signout",sign_out_path,method: :delete ,:class=>"btn btn-danger"%>

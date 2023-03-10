@@ -6,6 +6,6 @@ class User < ApplicationRecord
     has_many:comments
     has_secure_password
     validates :userName , presence: true , uniqueness: true
-    #validates :password, presence: true, length: { minimum: 6 }
+    validates :password, presence: true
     validates :name, presence: true
 end

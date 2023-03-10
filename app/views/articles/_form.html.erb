@@ -21,11 +21,15 @@
     <%= form.rich_text_area :content %>
   </div>
 
-  <div>
+<%
+=begin%>
+   <div>
     <%= form.label :user_id, style: "display: block" %>
     <%= form.collection_select :user_id,User.all ,:id ,:name %>
   </div>
-
+ 
+<%
+=end%>
   <div>
     <%= form.submit %>
   </div>
