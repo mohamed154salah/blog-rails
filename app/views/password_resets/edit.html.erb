@@ -1,0 +1,24 @@
+<h1>reset Your password</h1>
+<%=form_with  data: { turbo: false } ,model:@user, url:password_resets_edit_path(token:params[:token]) do|form| %>
+
+  <% if flash[:notice] %>
+  <div class="alert alert-info"><%= flash[:notice] %></div>
+  <% end %>
+
+  <div class="mb-3">
+  <%= form.label :password , :class=>"form-label"%>
+  <%= form.password_field :password ,:class=>"form-control", :placeholder=>"password"%>
+  </div>
+  
+  <div class="mb-3">
+  <%= form.label :password_confirmation , :class=>"form-label"%>
+  <%= form.password_field :password_confirmation ,:class=>"form-control", :placeholder=>"password"%>
+  </div>
+  
+  
+  
+   <div class="mb-3">
+      <%= form.submit "reset password" ,  :class=>"btn btn-primary"%>
+  </div>
+
+<%end%>

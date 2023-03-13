@@ -1,0 +1,23 @@
+<h1>Foregot Your password</h1>
+<%=form_with data: { turbo: false }, url:password_resets_path do|form| %>
+
+  <% if flash[:notice] %>
+  <div class="alert alert-info"><%= flash[:notice] %></div>
+  <% end %>
+
+  <div class="mb-3">
+  <%= form.label :userName , :class=>"form-label"%>
+  <%= form.text_field :userName ,:class=>"form-control", :placeholder=>"userName"%>
+  </div>
+  
+    <div class="mb-3">
+  <%= form.label :Email , :class=>"form-label"%>
+  <%= form.text_field :Email ,:class=>"form-control", :placeholder=>"mail@exam.com"%>
+  </div>
+  
+  
+   <div class="mb-3">
+      <%= form.submit "reset password" ,  :class=>"btn btn-primary"%>
+  </div>
+
+<%end%>
