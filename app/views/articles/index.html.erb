@@ -1,14 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
 <h1 class="title">Articles</h1>
+<% if Current.user %>
+<p>
+<%= link_to "New article", new_article_path %>
+</p>
+<%end%>
 
 <div id="articles" class="content">
   <% @articles.each do |article| %>
     <%= render article %>
     <p>
+    <% if Current.user %>
       <%= link_to "Show this article", article %>
+    <%end%>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New article", new_article_path %>
