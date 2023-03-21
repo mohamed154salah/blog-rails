@@ -4,9 +4,9 @@ class PasswordResetsController<ApplicationController
   end
   
   def create
-    user = User.find_by(userName:params[:userName])
+    user = User.find_by(email:params[:email])
     if user.present?
-      PasswordMailer.with(email: params[:Email],user: user).reset.deliver_now
+      PasswordMailer.with(user: user).reset.deliver_now
       redirect_to root_url, :notice => "Email sent with password reset instructions."      
     else
       redirect_to root_url, :notice => "userName not found."      
